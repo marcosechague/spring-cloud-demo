@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: compras
+  cloud:
+      config:
+        uri: http://localhost:8888
+        username: spring-demo
+        password: pqntslc1$
+server:
+  port: 9982
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://spring-demo:pqntslc1$@localhost:8761/eureka/
+  instance:
+    appname: compras
+    instanceId: ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id:${server.port}}} 
+
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+#  instance:
+#    preferIpAddress: true
+    
+    
+  

@@ -1,0 +1,27 @@
+zuul:
+  routes:
+    compras:
+      path: /compras-api/**
+      serviceId: compras
+      stripPrefix: false
+      sensitive-headers: Cookie,Set-Cookie
+    productos:
+      path: /productos-api/**
+      serviceId: productos
+      stripPrefix: false
+      sensitive-headers: Cookie,Set-Cookie
+    proveedores:
+      path: /proveedores-api/**
+      serviceId: proveedores
+      stripPrefix: false
+      sensitive-headers: Cookie,Set-Cookie
+     
+# Discovery Server Access
+eureka:
+  client:
+    registerWithEureka: false
+    serviceUrl:
+      defaultZone: http://spring-demo:pqntslc1$@localhost:8761/eureka/
+ 
+server:
+  port: 8080   # HTTP (Tomcat) port

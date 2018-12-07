@@ -1,0 +1,8 @@
+security:
+  basic:
+    enabled: true
+  user:
+      name: spring-demo
+      password: pqntslc1$
+logging:
+  file: logs/proveedores-api.log
